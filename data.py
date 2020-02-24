@@ -1,1 +1,2 @@
 ACCESS_POINT_1 = 1
+USER_1         = 1
