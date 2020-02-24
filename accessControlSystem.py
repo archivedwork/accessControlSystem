@@ -10,9 +10,9 @@ import driver
 import data
 
 a = []
+u = []
+
 a.append(driver.createAP(data.ACCESS_POINT_1))
-
-
 if a[0] == data.ACCESS_POINT_1:
     print "DONE"
 
@@ -20,4 +20,11 @@ a.append(driver.createAP(data.ACCESS_POINT_1))
 if a[1] == data.ACCESS_POINT_1:
     print "FAIL"
 
-print(a)
+u.append(driver.grant(data.ACCESS_POINT_1, data.USER_1))
+if bool(a[0]) != u[0]:
+    print("DONE")
+    
+if bool(a[0] == u[0]):
+    print("FAIL")
+print(u)
+
