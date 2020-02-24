@@ -1,0 +1,1 @@
+ACCESS_POINT_1 = 1
