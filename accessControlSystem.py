@@ -5,26 +5,33 @@
 ## - version 2 : make half structured and half unstructured code
 ## - version 3 : make unstructured code base (code that is hard to read and follow)
 
-# version 1
-import driver
-import data
+# Test Cases
+## accessPoint          User           Grant             check
+#     1                  1             DONE               Yes
+#     1                  1             FAIL               NO
+#     1                  2             DONE               Yes
 
-a = []
-u = []
 
-a.append(driver.createAP(data.ACCESS_POINT_1))
-if a[0] == data.ACCESS_POINT_1:
-    print "DONE"
+accessPoint = []
+user        = []
+grant       = []
 
-a.append(driver.createAP(data.ACCESS_POINT_1))
-if a[1] == data.ACCESS_POINT_1:
-    print "FAIL"
+def createAP(access_identifier):
 
-u.append(driver.grant(data.ACCESS_POINT_1, data.USER_1))
-if bool(a[0]) != u[0]:
-    print("DONE")
-    
-if bool(a[0] == u[0]):
-    print("FAIL")
-print(u)
+    if access_identifier not in accessPoint:
+        accessPoint.append(access_identifier)
+        x = "DONE"
+        print(x)
+    else:
+        print("FAIL")
+        return accessPoint
 
+# Test cases for 
+createAP(1)
+createAP(2)
+createAP(1)
+createAP(3)
+createAP(2)
+createAP(2)
+createAP(100)
+print(accessPoint)
