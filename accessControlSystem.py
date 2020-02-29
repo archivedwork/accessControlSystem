@@ -35,7 +35,18 @@ def createUser(user_identifier):
         print(x)
     else:
         print("FAIL")
-        return accessPoint
+        return user
+
+def grant(accessIdentifier, userIdentifier):
+    if accessIdentifier in accessPoint:
+        if userIdentifier in user:
+            print("DONE")
+        else:
+            print("FAIL")
+    else:
+        print("FAIL")
+
+    return True
 
 
 # Test cases for create access point
@@ -49,8 +60,11 @@ createAP(1)
 
 # Test Cases for user 
 createUser(1)
-# createUser(1)
+createUser(3)
 # createUser(2)
+
+grant(1,1)
+
 
 print("Access Point: ", accessPoint)
 print("Users: ", user)
