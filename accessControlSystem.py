@@ -41,14 +41,19 @@ def grant(accessIdentifier, userIdentifier):
     if accessIdentifier in accessPoint:
         if userIdentifier in user:
             print("DONE")
+            return "DONE"
         else:
             print("FAIL")
+            return "FAIL"
     else:
+        return "FAIL"
         print("FAIL")
 
-    return True
-
-
+def check(accessIdentifier, userIdentifier):
+    if grant(accessIdentifier, userIdentifier) == "DONE":
+        print("YES")
+    else:
+        print("NO")
 # Test cases for create access point
 createAP(1)
 # createAP(2)
@@ -64,7 +69,7 @@ createUser(3)
 # createUser(2)
 
 grant(1,1)
-
+check(1,1)
 
 print("Access Point: ", accessPoint)
 print("Users: ", user)
