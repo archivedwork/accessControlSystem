@@ -26,12 +26,31 @@ def createAP(access_identifier):
         print("FAIL")
         return accessPoint
 
-# Test cases for 
+
+def createUser(user_identifier):
+
+    if user_identifier not in user:
+        user.append(user_identifier)
+        x = "DONE"
+        print(x)
+    else:
+        print("FAIL")
+        return accessPoint
+
+
+# Test cases for create access point
 createAP(1)
-createAP(2)
-createAP(1)
-createAP(3)
-createAP(2)
-createAP(2)
-createAP(100)
-print(accessPoint)
+# createAP(2)
+# createAP(1)
+# createAP(3)
+# createAP(2)
+# createAP(2)
+# createAP(100)
+
+# Test Cases for user 
+createUser(1)
+# createUser(1)
+# createUser(2)
+
+print("Access Point: ", accessPoint)
+print("Users: ", user)
