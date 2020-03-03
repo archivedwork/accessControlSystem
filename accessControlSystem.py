@@ -14,7 +14,6 @@
 
 accessPoint = []
 user        = []
-grant       = []
 
 def createAP(access_identifier):
 
