@@ -14,14 +14,12 @@
 
 accessPoint = []
 user        = []
-grant       = []
 
 def createAP(access_identifier):
 
     if access_identifier not in accessPoint:
         accessPoint.append(access_identifier)
-        x = "DONE"
-        #print(x)
+        
         return "DONE"
     else:
         #print("FAIL")
