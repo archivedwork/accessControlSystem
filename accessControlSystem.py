@@ -14,6 +14,7 @@
 
 accessPoint = []
 user        = []
+grnt       = []
 
 def createAP(access_identifier):
 
@@ -63,6 +64,7 @@ def grant(accessIdentifier, userIdentifier):
     if accessIdentifier in accessPoint:
         if userIdentifier in user:
             #print("DONE")
+            grnt.append(userIdentifier)
             return "DONE"
         else:
             #print("FAIL")
@@ -84,7 +86,17 @@ def check(accessIdentifier, userIdentifier):
         return "Does not exit"
 
 def revoke(accessIdentifier, userIdentifier):
-    return 0
+    if accessIdentifier in accessPoint:
+        if userIdentifier in user:
+            #print("DONE")
+            #user.pop()
+            return "DONE"
+        else:
+            #print("FAIL")
+            return "FAIL"
+    else:
+        return "Does not exit"
+        # print("FAIL")
 
 
 # Test cases for create access point
@@ -107,7 +119,8 @@ def revoke(accessIdentifier, userIdentifier):
 #createUser(1)
 #deleteUser(1)
 
-output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), deleteAP(1), deleteAP(1)]
+output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1)]
 print(output)
 print("Access Point: ", accessPoint)
 print("Users: ", user)
+print("Grant: ", grnt)
