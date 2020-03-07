@@ -1,2 +1,4 @@
 .vscode/settings.json
 .~lock.SampleREQ_AccessControlSystem.docx#
+.vscode
+__pycache__

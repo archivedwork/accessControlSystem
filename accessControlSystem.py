@@ -43,61 +43,44 @@ def createUser(user_identifier):
 
     if user_identifier not in user:
         user.append(user_identifier)
-        x = "DONE"
-        #print(x)
         return "DONE"
     else:
-        #print("FAIL")
         return "FAIL"
 
 def deleteUser(user_identifier):
 
     if user_identifier in user:
         user.pop()
-        #print(x)
         return "DONE"
     else:
-        #print("FAIL")
         return "FAIL"
 
 def grant(accessIdentifier, userIdentifier):
     if accessIdentifier in accessPoint:
         if userIdentifier in user:
-            #print("DONE")
-            grnt.append(userIdentifier)
             return "DONE"
         else:
-            #print("FAIL")
             return "FAIL"
     else:
         return "Does not exit"
-        # print("FAIL")
 
 
 def check(accessIdentifier, userIdentifier):
     if grant(accessIdentifier, userIdentifier) == "DONE":
-        #print("YES")
         return "YES"
     if grant(accessIdentifier, userIdentifier) == "FAIL":
         return "NO"
     
     if grant(accessIdentifier, userIdentifier) == "Does not exit":
-        #print("NO")
         return "Does not exit"
 
 def revoke(accessIdentifier, userIdentifier):
-    if accessIdentifier in accessPoint:
-        if userIdentifier in user:
-            #print("DONE")
-            #user.pop()
-            return "DONE"
-        else:
-            #print("FAIL")
-            return "FAIL"
-    else:
+   if grant(accessIdentifier, userIdentifier) == "DONE":
+       #grant(accessIdentifier, userIdentifier) == "FAIL"
+       return "FAIL"
+    
+   if grant(accessIdentifier, userIdentifier) == "FAIL":
         return "Does not exit"
-        # print("FAIL")
-
 
 # Test cases for create access point
 #createAP(1)
@@ -119,7 +102,7 @@ def revoke(accessIdentifier, userIdentifier):
 #createUser(1)
 #deleteUser(1)
 
-output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1)]
+output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1), revoke(2,2)]
 print(output)
 print("Access Point: ", accessPoint)
 print("Users: ", user)
