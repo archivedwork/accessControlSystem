@@ -21,10 +21,10 @@ def createAP(access_identifier):
     if access_identifier not in accessPoint:
         accessPoint.append(access_identifier)
         
-        return "DONE"
+        return 'DONE'
     else:
         #print("FAIL")
-        return "FAIL"
+        return 'FAIL'
 
 def deleteAP(access_identifier):
 
@@ -47,6 +47,7 @@ def createUser(user_identifier):
     else:
         return "FAIL"
 
+
 def deleteUser(user_identifier):
 
     if user_identifier in user:
@@ -55,6 +56,7 @@ def deleteUser(user_identifier):
     else:
         return "FAIL"
 
+
 def grant(accessIdentifier, userIdentifier):
     if accessIdentifier in accessPoint:
         if userIdentifier in user:
@@ -62,7 +64,7 @@ def grant(accessIdentifier, userIdentifier):
         else:
             return "FAIL"
     else:
-        return "Does not exit"
+        return 'FAIL'
 
 
 def check(accessIdentifier, userIdentifier):
@@ -73,6 +75,7 @@ def check(accessIdentifier, userIdentifier):
     
     if grant(accessIdentifier, userIdentifier) == "Does not exit":
         return "Does not exit"
+
 
 def revoke(accessIdentifier, userIdentifier):
    if grant(accessIdentifier, userIdentifier) == "DONE":
@@ -102,8 +105,8 @@ def revoke(accessIdentifier, userIdentifier):
 #createUser(1)
 #deleteUser(1)
 
-output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1), revoke(2,2)]
-print(output)
-print("Access Point: ", accessPoint)
-print("Users: ", user)
-print("Grant: ", grnt)
+#output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1), revoke(2,2)]
+#print(output)
+# print("Access Point: ", accessPoint)
+# print("Users: ", user)
+# print("Grant: ", grnt)
