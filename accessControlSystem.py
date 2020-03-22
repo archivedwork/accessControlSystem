@@ -1,9 +1,8 @@
 ### Task 1 ##
-## - choose one of three problems
-## - code the selected problem and make three version as below:
-## - version 1 : use structured code base (try to apply some design pattern style)
-## - version 2 : make half structured and half unstructured code
-## - version 3 : make unstructured code base (code that is hard to read and follow)
+## - choose one of three given problems.
+## - write spaghetti code for it.
+## - write structure code for it.
+## - investigate on how can we 
 
 # Test Cases
 ## accessPoint          User           Grant             check
@@ -21,7 +20,8 @@ def createAP(access_identifier):
     if access_identifier not in accessPoint:
         accessPoint.append(access_identifier)
         
-        return 'DONE'
+        # return('DONE')
+        print ('DONE')
     else:
         #print("FAIL")
         return 'FAIL'
@@ -78,12 +78,12 @@ def check(accessIdentifier, userIdentifier):
 
 
 def revoke(accessIdentifier, userIdentifier):
-   if grant(accessIdentifier, userIdentifier) == "DONE":
-       #grant(accessIdentifier, userIdentifier) == "FAIL"
-       return "FAIL"
-    
-   if grant(accessIdentifier, userIdentifier) == "FAIL":
-        return "Does not exit"
+    if userIdentifier in user and accessIdentifier in accessPoint:
+        user.pop()
+        accessPoint.pop()
+        return "DONE"
+    else:
+        return "FAIL"
 
 # Test cases for create access point
 #createAP(1)
@@ -105,8 +105,8 @@ def revoke(accessIdentifier, userIdentifier):
 #createUser(1)
 #deleteUser(1)
 
-#output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), check(2,2), revoke(1,1), revoke(2,2)]
-#print(output)
-# print("Access Point: ", accessPoint)
-# print("Users: ", user)
+output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), revoke(1,1), revoke(1,1), revoke(2,2), check(1,1), check(2,2), deleteAP(1), deleteAP(1), deleteUser(1), deleteUser(1)]
+print(output)
+print("Access Point: ", accessPoint)
+print("Users: ", user)
 # print("Grant: ", grnt)
