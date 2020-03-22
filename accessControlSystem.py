@@ -1,8 +1,3 @@
-### Task 1 ##
-## - choose one of three given problems.
-## - write spaghetti code for it.
-## - write structure code for it.
-## - investigate on how can we 
 
 # Test Cases
 ## accessPoint          User           Grant             check
@@ -21,7 +16,7 @@ def createAP(access_identifier):
         accessPoint.append(access_identifier)
         
         # return('DONE')
-        print ('DONE')
+        print ('DONE')    #bug inject
     else:
         #print("FAIL")
         return 'FAIL'
@@ -51,7 +46,8 @@ def createUser(user_identifier):
 def deleteUser(user_identifier):
 
     if user_identifier in user:
-        user.pop()
+        #user.pop()     
+        user.pull()     #bug inject
         return "DONE"
     else:
         return "FAIL"
