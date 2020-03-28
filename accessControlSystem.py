@@ -16,7 +16,7 @@ def createAP(access_identifier):
         accessPoint.append(access_identifier)
         
         # return('DONE')
-        print ('DONE')    #bug inject
+        print ('DONE')    #bug injected
     else:
         #print("FAIL")
         return 'FAIL'
@@ -80,6 +80,9 @@ def revoke(accessIdentifier, userIdentifier):
         return "DONE"
     else:
         return "FAIL"
+
+# extend the requirements with more system functionalities
+
 
 # Test cases for create access point
 #createAP(1)
