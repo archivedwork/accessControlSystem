@@ -81,31 +81,27 @@ def revoke(accessIdentifier, userIdentifier):
     else:
         return "FAIL"
 
-# extend the requirements with more system functionalities
 
+# ----------------------- Extended Edition ---------------------
+# The management of the Administration Building has decided to install an access control system to improve security conditions at the building.
+# The access control system allows these  access privileges :
+# add a new username to the list
+# the door can be opened if the user is in the list if not the door will not open
+# Time of Day: the system can allow the card to work at all day 24 hours per days
+# Start and Stop Dates: The system can allow the card to only work during certain defined ranges of time (June 1 through June 15, for example.)
+#
 
-# Test cases for create access point
-#createAP(1)
-# createAP(2)
-# createAP(1)
-# createAP(3)
-# createAP(2)
-# createAP(2)
-# createAP(100)
+listOfUsers = ["mo"]
 
-# Test Cases for user 
-#createUser(1)
-#createUser(3)
-# createUser(2)
+def dooropener(username):
+    if username not in listOfUsers:
+        return "User is not found, not granted"
+    return "user granted!, door opened"
 
-
-#check(1,1)
-#grant(1,3)
-#createUser(1)
-#deleteUser(1)
 
 output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), revoke(1,1), revoke(1,1), revoke(2,2), check(1,1), check(2,2), deleteAP(1), deleteAP(1), deleteUser(1), deleteUser(1)]
 print(output)
 print("Access Point: ", accessPoint)
 print("Users: ", user)
 # print("Grant: ", grnt)
+print(dooropener("m"))
