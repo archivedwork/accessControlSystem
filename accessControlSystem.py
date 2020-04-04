@@ -95,7 +95,6 @@ print("Users: ", user)
 # add a new username to the list
 # the door can be opened if the user is in the list if not the door will not open
 # Time of Day: the system can allow the card to work at all day 24 hours per days for half year then the administartion must update manually and  periodically each half year
-# Start and Stop Dates: The system can allow the card to only work during certain defined ranges of time (June 1 through June 15, for example.)
 #
 
 listOfUsers = ["mo"]
