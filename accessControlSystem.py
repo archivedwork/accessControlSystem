@@ -82,6 +82,13 @@ def revoke(accessIdentifier, userIdentifier):
         return "FAIL"
 
 
+output = [createAP(-3), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), revoke(1,1), revoke(1,1), revoke(2,2), check(1,1), check(2,2), deleteAP(1), deleteAP(1), deleteUser(1), deleteUser(1)]
+print(output)
+print("Access Point: ", accessPoint)
+print("Users: ", user)
+# print("Grant: ", grnt)
+
+
 # ----------------------- Extended Edition ---------------------
 # The management of the Administration Building has decided to install an access control system to improve security conditions at the building.
 # The access control system allows these  access privileges :
@@ -93,15 +100,21 @@ def revoke(accessIdentifier, userIdentifier):
 
 listOfUsers = ["mo"]
 
+def newUser(new):
+    if new not in listOfUsers:
+        listOfUsers.append(new);
+        return "Username " + new + " are added to system";
+    return "username exits!";
+
+
 def dooropener(username):
     if username not in listOfUsers:
         return "User is not found, not granted"
     return "user granted!, door opened"
 
 
-output = [createAP(1), createAP(1), createUser(1), createUser(1), grant(1,1), grant(1,1), grant(2,2), check(1,1), revoke(1,1), revoke(1,1), revoke(2,2), check(1,1), check(2,2), deleteAP(1), deleteAP(1), deleteUser(1), deleteUser(1)]
-print(output)
-print("Access Point: ", accessPoint)
-print("Users: ", user)
-# print("Grant: ", grnt)
 print(dooropener("m"))
+print(newUser("md"))
+print(newUser("md"))
+print(dooropener("md"))
+print(listOfUsers)
