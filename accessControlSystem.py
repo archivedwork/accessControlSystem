@@ -1,4 +1,4 @@
-
+from datetimerange import DateTimeRange
 # Test Cases
 ## accessPoint          User           Grant             check
 #     1                  1             DONE               Yes
@@ -94,7 +94,7 @@ print("Users: ", user)
 # The access control system allows these  access privileges :
 # add a new username to the list
 # the door can be opened if the user is in the list if not the door will not open
-# Time of Day: the system can allow the card to work at all day 24 hours per days
+# Time of Day: the system can allow the card to work at all day 24 hours per days for half year then the administartion must update manually and  periodically each half year
 # Start and Stop Dates: The system can allow the card to only work during certain defined ranges of time (June 1 through June 15, for example.)
 #
 
@@ -104,17 +104,26 @@ def newUser(new):
     if new not in listOfUsers:
         listOfUsers.append(new);
         return "Username " + new + " are added to system";
-    return "username exits!";
+    else:
+        return "username exits!";
 
 
 def dooropener(username):
     if username not in listOfUsers:
-        return "User is not found, not granted"
-    return "user granted!, door opened"
+        print("User is not found, not granted")
+    else:
+        print("USER GRANTED!, DOOR OPENED")
+        userEntranceTime = "2020-06-23T10:00:00";
+        return userEntranceTime
 
+time_range = DateTimeRange("2020-01-01T00:00:00", "2020-06-30T00:00:00")
 
+print("---------------------------- Extended version -------------------------")
+print("2015-03-23T00:00:00" in time_range)
 print(dooropener("m"))
-print(newUser("md"))
 print(newUser("md"))
 print(dooropener("md"))
 print(listOfUsers)
+
+print(dooropener("mo") in time_range)
+print(time_range)
