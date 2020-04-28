@@ -109,7 +109,8 @@ def newUser(new):
 
 def dooropener(username):
     if username not in listOfUsers:
-        print("User is not found, not granted")
+        return "User is not found, not granted"
+        #print("User is not found, not granted")
     else:
         print("USER GRANTED!, DOOR OPENED")
         userEntranceTime = "2020-06-23T10:00:00";
